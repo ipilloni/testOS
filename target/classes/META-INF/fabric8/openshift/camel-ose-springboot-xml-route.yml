@@ -1,0 +1,17 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    expose: "true"
+    app: camel-ose-springboot-xml
+    provider: fabric8
+    version: 1.0.0-SNAPSHOT
+    group: org.mycompany
+  name: camel-ose-springboot-xml
+spec:
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: camel-ose-springboot-xml
